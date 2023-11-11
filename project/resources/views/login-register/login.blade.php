@@ -17,7 +17,7 @@
     <div class="row">
         <img class="b_img_yan" src="{{ asset('imgs/yan.jpg') }}" alt="yan" />
         <div class="col">
-            {{-- <img class="b_img" src="{{$product->name}}" alt="b_img" /> --}}
+            <img class="b_img" src="{{$product->name}}" alt="b_img" />
         </div>
         <div class="col b_login_sag">
             <h1>Welcome!</h1>
