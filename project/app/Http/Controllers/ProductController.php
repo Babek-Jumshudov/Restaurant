@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
+
     public function index()
     {
-        $products = Product::all();
-        return view("home.welcome", compact("products"));
+        $products = Product::orderBy("created_at", "desc")->paginate(10);
+        return view('welcome', compact('products'));
     }
-
 
 
     public function create()
