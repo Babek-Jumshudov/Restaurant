@@ -437,23 +437,25 @@
                             <div class="FEATURED_Product_line1">
                                 <div class="container featured_product">
 
-                                    @if ($products->count() > 0)
-                                        @foreach ($products as $product)
-                                            <p>ID: {{ $product->id }}</p>
-                                            <p>Name: {{ $product->name }}</p>
-                                            <p>Description: {{ $product->description }}</p>
-                                            <p>Delivery: {{ $product->delivery }}</p>
-                                            <p>Category: {{ $product->category }}</p>
-                                        @endforeach
-                                    @else
-                                        <p>Ürün bulunamadı.</p>
-                                    @endif
 
-                                    {{ $products->links() }}
+
+
+                                        @foreach ($products as $prod)
+                                            <p>ID: {{ $prod->id }}</p>
+                                            <p>Name: {{ $prod->name }}</p>
+                                            <p>Description: {{ $prod->description }}</p>
+                                            <p>Delivery: {{ $prod->delivery }}</p>
+                                            <p>Category: {{ $prod->category }}</p>
+                                        @endforeach
+                                  
+
+
+
+
 
 
                                     <div class="featured_product_img">
-                                        <img src="item-1.jpg" alt="">
+                                        <img src="item-1.jpg" alt="">       
                                     </div>
                                     <div class=" featured_product_location ">
                                         <h6>Burger King</h6>
