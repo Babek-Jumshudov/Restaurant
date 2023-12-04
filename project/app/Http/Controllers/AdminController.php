@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        return view("AdminPanel.admin");
+        $users = User::orderBy("created_at", "desc")->paginate(20);
+        return view('AdminPanel.admin', compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         return view("AdminPanel.rest");
@@ -26,11 +25,7 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        return view("AdminPanel.menu");
-
-    }
+   
 
     /**
      * Display the specified resource.
@@ -56,11 +51,10 @@ class AdminController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Admin $admin)
+   
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('admin.user' , [$user->id])->with(['success' => 'Istifadeci silindi']);
     }
 }

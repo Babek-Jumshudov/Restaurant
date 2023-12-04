@@ -15,11 +15,11 @@
 
 <body>
     <div class="row">
-        <img class="b_img_yan" src="{{ asset('imgs/yan.jpg') }}" alt="yan" />
-        <div class="col">
-            {{-- <img class="b_img" src="{{$product->description}}" alt="b_img" /> --}}
+        <img class="b_img_yan" src="{{ asset('images/login_img_yan.jpg') }}" alt="b_img" />
+        <div>
+            <img class="b_img" src="{{ asset('images/login_img_duz.jpg') }}" alt="b_img" />
         </div>
-        <div class="col b_login_sag">
+        <div class="b_login_sag">
             <h1>Welcome!</h1>
             <p>Sign in to your account to continue</p>
             <div class="container">

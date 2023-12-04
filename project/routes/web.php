@@ -48,8 +48,15 @@ Route::group(['prefix' => '/email'], function () {
 
 });
 Route::group(['prefix' => '/adminPanel'], function () {
-    Route::get('/', [AdminController::class, 'index'])->name('users');
-    Route::get('view', [ProductController::class, 'view']);
+    Route::get('/', [AdminController::class, 'index'])->name('admin.user');
     Route::get('restaurant', [AdminController::class, 'create'])->name('restaurant');
-    Route::get('menu', [AdminController::class, 'store'])->name('menu');
+    Route::delete('users/{user}', [AdminController::class, 'destroy'])->name('admin.delete');
+    // Route::resource('users', UserController::class);
 });
+Route::group(['prefix'=> 'adminPanel/menu'], function () {
+    Route::get('/', [ProductController::class, 'view'])->name('menu');
+    Route::get('/add', [ProductController::class,'create'])->name('product.creat');
+    Route::resource('product', ProductController::class);
+});
+
+

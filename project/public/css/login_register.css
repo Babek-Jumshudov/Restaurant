@@ -1,10 +1,13 @@
 .b_img {
-    height: auto;
-    width: 80%;
+    height: 97vh;
+    position: absolute;
+    width: 100vh;
   }
   
   .b_login_sag {
-    margin-top: 5%;
+    margin-top: 6%;
+    width: 600px;
+    margin-left: 50%;
   }
   *{
     transition-duration: 0.3s;

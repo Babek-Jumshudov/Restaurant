@@ -14,14 +14,13 @@
 </head>
 
 <body>
-    <div class="contrainer">
-        <img class="b_img_yan" src="./imgs/yan.jpg" alt="" />
-        <div class="col-5
-        ">
-            <img class="b_img" src="./imgs/cd693bc4-a693-4cda-9d84-fc4e69e855be.jpg" alt="" />
+    <div class="contain">
+        <img class="b_img_yan" src="{{ asset('images/login_img_yan.jpg') }}" alt="b_img" />
+        <div>
+            <img class="b_img" src="{{ asset('images/login_img_duz.jpg') }}" alt="b_img" />
         </div>
-        <div class="col b_login_sag">
-            <h1>Forgot password?</h1>
+        <div class="col b_login_sag" style="width: 600px;">
+            <h1>Forgot password?            </h1>
             <p>Please enter your email address to continue</p>
             @if (session('email'))
                 <div class="alert alert-danger">
@@ -29,10 +28,10 @@
                 </div>
             @endif
             @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="row b_inputs">
                 <div class="col-1">
                     <svg width="576" height="72" viewBox="0 0 576 72" fill="none"

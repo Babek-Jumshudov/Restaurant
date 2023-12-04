@@ -417,13 +417,7 @@
                         </div>
                     </div>
 
-                    @foreach ($products as $prod)
-                    <p>ID: {{ $prod->id }}</p>
-                    <p>Name: {{ $prod->name }}</p>
-                    <img src="{{ $prod->description }}" alt="Product Image">
-                    <p>Delivery: {{ $prod->delivery }}</p>
-                    <p>Category: {{ $prod->category }}</p>
-                @endforeach
+                   
                     <!---------------------------------  FEATURED ---------------------------------------------------------------------------------------------->
                     <div class="FEATURED">
                         <!--------------------------------- header FEATURED ------------------------------------->

@@ -12,12 +12,12 @@ use Mail;
 class UserController extends Controller
 {
 
+
     public function index()
     {
         return view('login-register.login');
     }
 
-    
 
     public function store(Request $request)
     {
@@ -25,9 +25,10 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
+       
 
         if (auth()->attempt($credentials)) {
-            return redirect()->intended('home')->with('success', 'Welcome QAQA');
+            return redirect()->intended('home')->with('success', 'WELCOME ' . ' '. $request->email);
         } else {
             return back()->with(['email' => 'Melumatlari duzgun daxil edin']);
         }
@@ -53,17 +54,17 @@ class UserController extends Controller
 
     public function resetPassword(Request $request)
     {
-        
+
         $user = User::where('email', $request->input('email'))->first();
 
         $data = ['name' => $request->input('name'), 'email' => $request->input('email')];
-    
+
         if ($user) {
             Mail::send('babekcumsudov593@gmail.com', $data, function ($message) use ($user) {
                 $message->to($user->email);
-                $message->subject('Hello BAbek');
+                $message->subject('Hello Babek');
             });
-    
+
             return redirect()->route('home')->with(['success' => 'Mail başarıyla gönderildi QAQA.']);
         } else {
             return back()->with(['email' => 'Kullanıcı e-posta adresine sahip değil.']);

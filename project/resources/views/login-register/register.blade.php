@@ -15,9 +15,9 @@
 
 <body>
     <div class="row">
-        <img class="b_img_yan" src="./imgs/yan.jpg" alt="">
-        <div class="col ">
-            <img class="b_img" src="./imgs/cd693bc4-a693-4cda-9d84-fc4e69e855be.jpg" alt="">
+        <img class="b_img_yan" src="{{ asset('images/login_img_yan.jpg') }}" alt="b_img" />
+        <div>
+            <img class="b_img" src="{{ asset('images/login_img_duz.jpg') }}" alt="b_img" />
         </div>
         <div class="col b_login_sag">
             <h1>
@@ -26,8 +26,7 @@
             <p>
                 Plese create an account to continue using our service
             </p>
-            @if (session())
-            @endif
+
             <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="row b_inputs">
@@ -43,11 +42,13 @@
                     <div class="col">
                         <input value="{{ old('name') }}" class="b_input_text" type="text" name="name"
                             placeholder="Name">
-
                         @error('name')
-                            <p class="text-red-500">{{ $message }}</p>
+                            <p style="position: absolute" class=" alert alert-danger text-red-500">
+                                {{ $message }}
+                            </p>
                         @enderror
                     </div>
+
                 </div>
 
                 <div class="row  b_inputs">
@@ -64,7 +65,9 @@
                         <input value="{{ old('email') }}" class="b_input_text" type="text" name="email"
                             placeholder="Email" />
                         @error('email')
-                            <p class="text-red-500">{{ $message }}</p>
+                            <p style="position: absolute" class=" alert alert-danger text-red-500">
+                                {{ $message }}
+                            </p>
                         @enderror
                     </div>
                 </div>
@@ -82,14 +85,16 @@
                     <div class="col">
                         <input class="b_input_text" type="password" name="password" placeholder="Password" />
                         @error('password')
-                            <p class="text-red-500">{{ $message }}</p>
+                            <p style="position: absolute" class=" alert alert-danger text-red-500">
+                                {{ $message }}
+                            </p>
                         @enderror
                     </div>
                 </div>
                 <button type="submit" class="b_button">Create an account</button>
             </form>
             <br>
-            <span class="b_signin_link">Already have an accounts? 
+            <span class="b_signin_link">Already have an accounts?
                 <a href="login">Sign In</a></span>
         </div>
     </div>
