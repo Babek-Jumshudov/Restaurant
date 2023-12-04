@@ -1,13 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MailController;
-
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [ProductController::class,'index']);
+Route::get('/', [ProductController::class, 'index']);
 Route::get('/home', function () {
     return view('home.welcome');
 });
@@ -23,21 +23,33 @@ Route::get('/orders', function () {
 Route::get('/setting', function () {
     return view('settings.index');
 });
-Route::get('/login', [UserController::class,'index']);
-Route::post('/login', [UserController::class,'store'])->name("login");
+Route::prefix('/login')->group(function () {
+    Route::get('/', [UserController::class, 'index']);
+    Route::post('/', [UserController::class, 'store'])->name("login");
 
-Route::get('/register', function () {
-    return view('login-register.register');
 });
-Route::post('/register', [UserController::class,'Register'])->name("register");
+Route::prefix('/register')->group(function () {
+    Route::get('/', function () {
+        return view('login-register.register');
+    });
+    Route::post('/', [UserController::class, 'Register'])->name("register");
 
-Route::get('/forgot', function () {
-    return view('login-register.forgot');
-})->name('forgot');
+});
+Route::prefix("/forgot")->group(function () {
+    Route::get('/', function () {
+        return view('login-register.forgot');
+    })->name('forgot');
 
-Route::post('forget/password/reset', [UserController::class, 'resetPassword'])->name('password.reset');
+    Route::post('password/reset', [UserController::class, 'resetPassword'])->name('password.reset');
+});
+Route::group(['prefix' => '/email'], function () {
+    Route::get('connaction', [UserController::class, 'TestController'])->name('email.connaction');
+    Route::get('send', [MailController::class, 'index'])->name('send.email');
 
-Route::get('/email/connaction', [UserController::class,'TestController'])->name('email.connaction');
-Route::get('/send/email', [MailController::class,'index'])->name('send.email');
-
-
+});
+Route::group(['prefix' => '/adminPanel'], function () {
+    Route::get('/', [AdminController::class, 'index'])->name('users');
+    Route::get('view', [ProductController::class, 'view']);
+    Route::get('restaurant', [AdminController::class, 'create'])->name('restaurant');
+    Route::get('menu', [AdminController::class, 'store'])->name('menu');
+});

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="{{asset('css/admin.css')}}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -18,17 +18,17 @@
       <div class="contain">
         <div class="left">
           <div>
-            <a href="admin.html"
+            <a href="{{route('users')}}"
               ><i class="fa-solid fa-user"></i> <span>Users</span></a
             >
           </div>
           <div>
-            <a href="rest.html"
+            <a href="{{route('restaurant')}}"
               ><i class="fa-solid fa-utensils"></i> <span>Restaurants</span></a
             >
           </div>
           <div>
-            <a href="menu.html"
+            <a href="{{route('menu')}}"
               ><i class="fa-solid fa-burger"></i> <span>Menu</span></a
             >
           </div>
@@ -55,5 +55,6 @@
       </div>
     </div>
     <button class="btn">+ Add to</button>
+    <script src="{{asset('js/admin.js')}}"></script>
   </body>
 </html>

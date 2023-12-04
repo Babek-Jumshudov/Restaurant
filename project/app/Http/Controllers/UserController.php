@@ -17,6 +17,8 @@ class UserController extends Controller
         return view('login-register.login');
     }
 
+    
+
     public function store(Request $request)
     {
         $credentials = [
