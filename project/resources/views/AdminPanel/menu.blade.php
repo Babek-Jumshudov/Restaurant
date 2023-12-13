@@ -7,7 +7,9 @@
     <title>Admin Panel</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="shortcut icon" href="{{ asset('images/loqo_tek.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -17,20 +19,20 @@
 <body>
     <div class="contain">
         <div class="contain">
-            <div class="left">
-                <div>
-                    <a href="{{ route('admin.user') }}"><i class="fa-solid fa-user"></i> <span>Users</span></a>
-                </div>
-                <div>
-                    <a href="{{ route('restaurant') }}"><i class="fa-solid fa-utensils"></i>
-                        <span>Restaurants</span></a>
-                </div>
-                <div>
-                    <a href="{{ route('menu') }}"><i class="fa-solid fa-burger"></i> <span>Menu</span></a>
-                </div>
-            </div>
+            @component('layout.adminMenu')
+            @endcomponent
             <div class="right">
-                <table border="">
+                @if (session('email'))
+                    <div class="alert alert-warning">
+                        {{ session('email') }}
+                    </div>
+                @endif
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <table border="1">
                     <tr>
                         <th>Id</th>
                         <th>Image</th>
@@ -41,22 +43,20 @@
                         <th>Distance</th>
                         <th>delet</th>
                     </tr>
-
                     @foreach ($products as $prod)
                         <tr>
                             <td>{{ $prod->id }}</td>
-                            <td><img src="/images/{{$prod->image }}"></td>
-                            {{-- <td><img src="/images/loqo_tek.jpg"></td> --}}
+                            <td><img src="{{ asset($prod->image) }}"></td>
                             <td>{{ $prod->name }}</td>
                             <td>{{ $prod->delivery }}</td>
                             <td>{{ $prod->star }}</td>
                             <td>{{ $prod->category }}</td>
                             <td>{{ $prod->distance }}</td>
-                            {{-- <form action="{{ route('user.delete', ['user' => $user->id]) }}" method="POST">
-                        @csrf
-                        @method('DELETE') --}}
-                            <td><button type="submit"><i class="fa-solid fa-trash"></i></button></td>
-                            {{-- </form> --}}
+                            <form action="{{ route('product.delete', ['product' => $prod->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <td> <button type="submit"><i class="fa-solid fa-trash"></i></button></td>
+                            </form>
                         </tr>
                     @endforeach
 
@@ -66,14 +66,32 @@
         <div class="poupup" id="poupup">
             <button class="close" id="close">X</button>
             <div class="inputgroup">
-                <form action="{{ route('product.creat') }}">
+                <form enctype="multipart/form-data" method='POST' action="{{ route('product.creat') }}">
                     @csrf
-                    <input type="file" name="image" placeholder="Add photo" />
-                    <input type="text" name="name" placeholder="Add name" />
-                    <input type="text" name="delivery" placeholder="Add delivery" />
-                    <input type="number" name="star" placeholder="Add star" />
-                    <input type="text" name="category" placeholder="Add category" />
-                    <input type="number" name="distance" placeholder="Add distance" />
+                    <input type="file" name="image" placeholder="Add photo" /><br>
+                    <input type="text" class="form-control" name="name" placeholder="Add name" /><br>
+                    <input type="text" class="form-control" name="delivery" placeholder="Add delivery" /><br>
+                    <input type="number" class="form-control" name="star" placeholder="Add star" /><br>
+                    <select class="form-select" name="category">
+                        <option value="Chicken">Chicken</option>
+                        <option value="Asian">Asian</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Vegetables">Vegetables</option>
+                        <option value="Pie">Pie</option>
+                        <option value="Desserts">Desserts</option>
+                        <option value="Pizza">Pizza</option>
+                        <option value="Burger">Burger</option>
+                        <option value="Fish">Fish</option>
+                    </select><br>
+                    <select class="form-select" name="distance">
+                        <option value="5-10 min">5-10 min</option>
+                        <option value="15-20 min">15-20 min</option>
+                        <option value="25-30 min">25-30 min</option>
+                        <option value="35-40 min">35-40 min</option>
+                        <option value="45-50 min">45-50 min</option>
+                        <option value="55-60 min">55-60 min</option>
+
+                    </select><br>
                     <button type="submit">Gonder</button>
                 </form>
             </div>

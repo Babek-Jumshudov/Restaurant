@@ -5,61 +5,49 @@ namespace App\Http\Controllers;
 use App\Models\Seller;
 use Illuminate\Http\Request;
 
+
 class SellerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $products = Seller::orderBy("created_at", "desc")->paginate(10);
+        return view('AdminPanel.rest', compact('products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function create(Request $request)
     {
-        //
+
+        if ($request->hasFile('image')) {
+            $files = $request->file('image');
+
+            if ($files->isValid()) {
+                $fileName = time() . '_' . $files->getClientOriginalName();
+                $files->move(public_path('uploads'), $fileName);
+                $seller = new Seller();
+                $seller->image = 'uploads/' . $fileName;
+                $seller->name = $request->name;
+                $seller->delivery = $request->delivery;
+                $seller->category = $request->category;
+                $seller->save();
+
+                return redirect()->route('restaurant')->with('success', 'Məhsul əlavə olundu!!');
+            } else {
+                return redirect()->route('restaurant')->with('error', 'Məhsul əlavə edilə bilmədi. Dosya geçersiz.');
+            }
+        } else {
+            return redirect()->route('restaurant')->with('error', 'Məhsul əlavə edilə bilmədi. Dosya yüklenmedi00.');
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Seller $seller)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Seller $seller)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Seller $seller)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Seller $seller)
     {
-        //
+        try {
+            $seller->delete();
+            return redirect()->route('restaurant')->with('success', 'Şirkət silindi');
+        } catch (\Throwable $th) {
+            return redirect()->route('restarant')->with('error', 'Şirkət silinə bilmədi.' . $th->getMessage());
+        }
     }
+
 }

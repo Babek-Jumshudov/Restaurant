@@ -7,7 +7,7 @@
     <title>Admin Panel</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="shortcut icon" href="{{ asset('images/loqo_tek.jpg') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -17,24 +17,19 @@
 <body>
     <div class="contain">
         <div class="contain">
-            @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-            <div class="left">
-                <div>
-                    <a href="{{ route('admin.user') }}"><i class="fa-solid fa-user"></i> <span>Users</span></a>
-                </div>
-                <div>
-                    <a href="{{ route('restaurant') }}"><i class="fa-solid fa-utensils"></i>
-                        <span>Restaurants</span></a>
-                </div>
-                <div>
-                    <a href="{{ route('menu') }}"><i class="fa-solid fa-burger"></i> <span>Menu</span></a>
-                </div>
-            </div>
+            @component('layout.adminMenu')
+            @endcomponent
             <div class="right">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if (session('email'))
+                    <div class="alert alert-warning">
+                        {{ session('email') }}
+                    </div>
+                @endif
                 <table border="1">
                     <tr>
                         <th>Id</th>

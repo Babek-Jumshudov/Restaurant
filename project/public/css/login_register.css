@@ -5,9 +5,10 @@
   }
   
   .b_login_sag {
-    margin-top: 6%;
     width: 600px;
     margin-left: 50%;
+    margin-top: 5%;
+    
   }
   *{
     transition-duration: 0.3s;
@@ -36,10 +37,11 @@
     height: 50px;
     background-color: rgb(107, 43, 226);
     color: white;
-    padding: 13px 195px;
+    padding: 14px 190px;
     border-radius: 10px;
     position: relative;
     top: 15px;
+    left: -32px;
     margin-bottom: 50px;
   }
   .b_button_continue:hover {
@@ -130,7 +132,7 @@
   .reset_password_bg {
     position: absolute;
     width: 100%;
-    height: 155vh;
+    height: 100vh;
     top: 0;
     left: 0;
     background-color: rgba(22, 22, 22, 0.74) ;
@@ -143,7 +145,7 @@
     border-radius: 20px;
     position: absolute;
     margin-left: 35%;
-    margin-top: 16%;
+    margin-top: 10%;
     padding: 25px 33px;
     text-align: center;
   }
