@@ -14,12 +14,12 @@
     width: 79%;
     margin-left: 23%;
   }
-  /* .b_logo_sol img {
+  .b_logo_sol img {
     position: relative;
     width: 30%;
     margin-left: 17%;
-  } */
-  /* .b_button_menu {
+  }
+  .b_button_menu {
     display: grid;
     margin-left: 20px;
     margin-top: 40px;
@@ -31,7 +31,7 @@
     border-radius: 10px;
     font-size: 14px;
     width: 85%;
-    margin-top: -20px;
+    margin-top: -25px;
     margin-left: 5%;
     align-items: center;
   }
@@ -105,7 +105,7 @@
     width: 130px;
     margin: 13px;
     margin-right: 20px;
-  } */
+  }
   .explore_catagories_div {
     display: flex;
     flex-direction: row;
@@ -955,7 +955,7 @@
     }
     .b_button_menu a {
       width: 130%;
-      margin-top: -15px;
+      margin-top: -25px;
     }
     .b_logo_sol img {
       width: 50%;
