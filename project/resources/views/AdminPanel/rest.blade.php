@@ -38,6 +38,8 @@
                         <th>Image</th>
                         <th>Delivery</th>
                         <th>Category</th>
+                        <th>Star</th>
+                        <th>Distance</th>
                         <th>Delet</th>
                     </tr>
 
@@ -48,6 +50,8 @@
                             <td>{{ $prod->name }}</td>
                             <td>{{ $prod->delivery }}</td>
                             <td>{{ $prod->category }}</td>
+                            <td>{{ $prod->star }}</td>
+                            <td>{{ $prod->distance }}</td>
                             <form action="{{ route('seller.delete', ['seller' => $prod->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -64,18 +68,41 @@
             <div class="inputgroup">
                 <form enctype="multipart/form-data" method='post' action="{{ route('seller.creat') }}">
                     @csrf
+                    <label for="image">Image:</label>
                     <input type="file" name="image" /><br>
+                    <label for="name">Name:</label>
                     <input type="text" class="form-control" placeholder="Name" name="name" /><br>
-                    <select class="form-select" name="delivery">
+                    <label for="delivery">Delivery:</label>
+                    <select class="form-control" name="delivery">
                         <option value="Free Delivery">Free Delivery</option>
                         <option value="9.99$ Delivery">9.99$ Delivery</option>
                     </select><br>
-                    <select class="form-select" name="category">
+                    <label for="category">Category:</label>
+                    <select class="form-control" name="category">
                         <option value="Pizza">Pizza</option>
                         <option value="Burger">Burger</option>
                         <option value="Fish">Fish</option>
                         <option value="Chicken">Chicken</option>
-                    </select>
+                    </select><br>
+                    <label for="star">Star:</label>
+                    <select class="form-control" name="star">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                       
+                    </select><br>
+                    <label for="distance">Distance:</label>
+                    <select class="form-control" name="distance">
+                        <option value="0.3 km">0.3 km</option>
+                        <option value="1.5 km">1.5 km</option>
+                        <option value="4.2 km">4.2 km</option>
+                        <option value="5.9 km">5.9 km</option>
+                        <option value="7.6 km">7.6 km</option>
+                        <option value="9.1 km">9.1 km</option>
+
+                    </select><br><br><br>
                     <button type="submit" class="btn">Gonder</button>
                 </form>
             </div>

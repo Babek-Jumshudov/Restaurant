@@ -14,6 +14,9 @@ class Seller extends Model
         'image',
         'name',
         'delivery',
-        'category'
+        'category',
+        'star',
+        'distance',
+
     ];
 }

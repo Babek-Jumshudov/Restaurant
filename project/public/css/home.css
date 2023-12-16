@@ -14,12 +14,12 @@
     width: 79%;
     margin-left: 23%;
   }
-  .b_logo_sol img {
+  /* .b_logo_sol img {
     position: relative;
-    width: 35%;
+    width: 30%;
     margin-left: 17%;
-  }
-  .b_button_menu {
+  } */
+  /* .b_button_menu {
     display: grid;
     margin-left: 20px;
     margin-top: 40px;
@@ -58,7 +58,7 @@
     width: 80%;
     margin-left: 12%;
     margin-top: 8px;
-  } /* =====================================================================================================================================================*/
+  } 
   .b_div_sag_ilkdiv {
     display: flex;
     text-decoration: none;
@@ -98,15 +98,14 @@
     height: 48px !important;
     margin-left: 5px;
   }
-  /* =====================================================================================================================================================*/
-  .explore_catagories_div {
+   .explore_catagories_div {
     display: flex;
   }
   .explore_catagories_boxs {
     width: 130px;
     margin: 13px;
     margin-right: 20px;
-  }
+  } */
   .explore_catagories_div {
     display: flex;
     flex-direction: row;
@@ -116,7 +115,7 @@
   }
   .explore_Product_line2 {
     display: flex;
-  } /* =====================================================================================================================================================*/
+  }  
   .FEATURED_Product {
     display: flex;
     flex-wrap: wrap;
@@ -136,10 +135,10 @@
     border-radius: 13px;
   }
   .featured_product_location {
-    width: 200px;
+    width: 203px;
     text-align: justify;
     padding: 7px 0px 0px 5px;
-  } /* =====================================================================================================================================================*/
+  }  
   .asian_boxs {
     display: flex;
     justify-content: space-around;
@@ -819,7 +818,7 @@
       border-radius: 13px;
     }
     .featured_product_location {
-      width: 200px;
+      width: 212px;
       text-align: justify;
       padding: 7px 0px 0px 5px;
     }
@@ -844,6 +843,9 @@
       padding: 5px 15px 0px 10px;
       font-size: 14px;
       font-weight: bold;
+      align-items: baseline;
+
+
     }
   }
   
@@ -904,6 +906,7 @@
     }
     .FEATURED_Product {
       width: 100%;
+      overflow: hidden;
     }
     .FEATURED_Product_line1 {
       margin-left: 0;

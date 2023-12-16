@@ -70,12 +70,16 @@
                     @csrf
                     <input type="file" name="image" placeholder="Add photo" /><br>
                     <input type="text" class="form-control" name="name" placeholder="Add name" /><br>
-                    <input type="text" class="form-control" name="delivery" placeholder="Add delivery" /><br>
-                    <input type="number" class="form-control" name="star" placeholder="Add star" /><br>
-                    <select class="form-select" name="category">
+                    <select class="form-control" name="delivery">
+                        <option value="Free Delivery">Free Delivery</option>
+                        <option value="9.99$ Delivery">9.99$ Delivery</option>
+                    </select><br> <input type="number" class="form-control" name="star"
+                        placeholder="Add star" /><br>
+                    <select class="form-control" name="category">
                         <option value="Chicken">Chicken</option>
                         <option value="Asian">Asian</option>
                         <option value="Rice">Rice</option>
+                        <option value="Skewers">Skewers</option>
                         <option value="Vegetables">Vegetables</option>
                         <option value="Pie">Pie</option>
                         <option value="Desserts">Desserts</option>
@@ -83,7 +87,7 @@
                         <option value="Burger">Burger</option>
                         <option value="Fish">Fish</option>
                     </select><br>
-                    <select class="form-select" name="distance">
+                    <select class="form-control" name="distance">
                         <option value="5-10 min">5-10 min</option>
                         <option value="15-20 min">15-20 min</option>
                         <option value="25-30 min">25-30 min</option>
@@ -91,8 +95,8 @@
                         <option value="45-50 min">45-50 min</option>
                         <option value="55-60 min">55-60 min</option>
 
-                    </select><br>
-                    <button type="submit">Gonder</button>
+                    </select>
+                    <button class="btn" type="submit">Gonder</button>
                 </form>
             </div>
         </div>

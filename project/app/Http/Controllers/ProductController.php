@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Seller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,7 +12,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::orderBy("created_at", "desc")->paginate(20);
-        return view('home.welcome', compact('products'));
+        $sellers = Seller::orderBy("created_at", "desc")->paginate(20);
+        return view('home.welcome', compact('products' , 'sellers'));
     }
     public function view()
     {
@@ -21,12 +23,14 @@ class ProductController extends Controller
     public function explore()
     {
         $products = Product::orderBy("created_at", "desc")->paginate(20);
-        return view('explore.index', compact('products'));
+        $sellers = Seller::orderBy("created_at", "desc")->paginate(20);
+        return view('explore.index', compact('products' , 'sellers'));
     }
     public function favorites()
     {
-        $products = Product::orderBy("created_at", "desc")->paginate(20);
-        return view('favorites.index', compact('products'));
+        $products = Product::orderBy("created_at", "desc")->paginate(20);       
+        $sellers = Seller::orderBy("created_at", "desc")->paginate(20);
+        return view('favorites.index', compact('products' , 'sellers'));
     }
     public function orders()
     {

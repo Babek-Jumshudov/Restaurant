@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('name'); 
             $table->string('delivery'); 
             $table->string('category'); 
+            $table->string('star'); 
+            $table->string('distance'); 
             $table->timestamps();
         });
     }

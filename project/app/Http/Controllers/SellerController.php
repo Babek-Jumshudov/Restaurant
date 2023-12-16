@@ -29,6 +29,8 @@ class SellerController extends Controller
                 $seller->name = $request->name;
                 $seller->delivery = $request->delivery;
                 $seller->category = $request->category;
+                $seller->star = $request->star;
+                $seller->distance = $request->distance;
                 $seller->save();
 
                 return redirect()->route('restaurant')->with('success', 'Məhsul əlavə olundu!!');
