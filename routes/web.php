@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // --------------menu-------------------------------------
-Route::group(['prefix' => '/'], function () {
+Route::group(['prefix' => '/Final-Project'], function () {
     Route::get('/', [ProductController::class, 'index']);
     Route::get('/home', [ProductController::class, 'index'])->name('home');
     Route::get('/explore', [ProductController::class, 'explore'])->name('explore');
