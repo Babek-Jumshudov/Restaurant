@@ -1,0 +1,143 @@
+.cards {
+    width: 100%;
+    height: auto;
+  }
+  .card0 {
+    width: 336px;
+    height: 150px;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    padding: 7px;
+  }
+  .card0 P {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .title {
+    margin-left: 15px;
+  }
+  .id {
+    font-size: 14px;
+    font-family: Open Sans;
+    color: #626264;
+    margin-right: 15px;
+  }
+  .div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn1 {
+    width: 96px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: rgb(80, 62, 157);
+    color: white;
+    border: none;
+    margin-right: 15px;
+  }
+  .time {
+    width: 165px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .time span {
+    font-size: 16px;
+    font-family: Open Sans;
+    color: gray;
+  }
+  .time b {
+    color: black;
+  }
+  .card_2 {
+    width: 336px;
+    height: 262px;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    padding: 7px;
+  }
+  .card_2 p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn_2 {
+    width: 74px;
+    height: 24px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgba(65, 157, 62, 0.1);
+    font-size: 11px;
+    font-family: Open Sans;
+    color: #419d3e;
+    margin-right: 15px;
+  }
+  .time_2 {
+    margin-top: 15px;
+  }
+  .time_2 span {
+    font-size: 14px;
+    font-family: Open Sans;
+    margin-left: 15px;
+  }
+  
+  h6 {
+    margin-left: 15px;
+    color: #182135;
+    font-size: 12px;
+    font-family: Open Sans;
+  }
+  .btn_group {
+    width: 100%;
+    height: auto;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn_group button {
+    width: 144px;
+    height: 40px;
+    border: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #fb6d3a;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .help {
+    color: #fb6d3a !important;
+    background-color: #fb6d3a1a !important;
+  }
+  .divs1 {
+    display: flex;
+  }
+  .divs2 {
+    display: flex;
+  }
+  .s_container {
+    margin: 5px;
+  }
+  @media screen and (max-width: 425px) {
+    .b_div_sag_products {
+      width: 105% !important;
+      margin-left: 5%;
+    }
+    .divs1 {
+      overflow: auto;
+      width: 111%;
+    }
+    .divs2 {
+      overflow: auto;
+      width: 111%;
+    }
+    .b_div_sol {
+      width: 15%;
+    }
+  }
+  
