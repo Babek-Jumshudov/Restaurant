@@ -30,16 +30,16 @@
             <div class="b_div_sag_products">
                 <div class="container">
                     <div class="s_contain">
-                        <div class="s_report">
+                        <div class="s_report" id='rest'>
                             <i class="fa-solid fa-shop"></i>
-                            <p>Restaurants (8)</p>
+                            <p> Restaurants (8)</p>
                         </div>
-                        <div>
+                        <div id='dish'>
                             <i class="fa-solid fa-utensils"></i>
-                            <p>Dishes (23)</p>
+                                <p>Dishes (23)</p>
                         </div>
                     </div>
-                    <div class="FEATURED_Product">
+                    <div class="FEATURED_Product"id="prod">
                         @foreach ($sellers as $key => $seller)
                             <div class="FEATURED_Product_line1">
                                 <div class="container featured_product">
@@ -108,17 +108,8 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="s_contain">
-                        <div>
-                            <i class="fa-solid fa-shop"></i>
-                            <p>Restaurants (8)</p>
-                        </div>
-                        <div class="s_report">
-                            <i class="fa-solid fa-utensils"></i>
-                            <p>Dishes (23)</p>
-                        </div>
-                    </div>
-                    <div style="flex-wrap: wrap; justify-content: flex-start;" class="asian_boxs">
+                    
+                    <div style="flex-wrap: wrap; justify-content: flex-start; " class="asian_boxs" id="food">
                         @foreach ($products as $key => $product)
                             <div class="asian_box col-4">
                                 <img src=" {{ $product->image }}" alt="Product Image">
@@ -164,7 +155,8 @@
                                                     d="M9.128 3H5.6V4.61538H8.472L10.072 6.23077H3.6C1.6 6.23077 0 7.84615 0 9.86538C0 11.8846 1.6 13.5 3.6 13.5C5.376 13.5 6.848 12.1915 7.136 10.4873L8.832 9.46154C8.8 9.59885 8.8 9.72808 8.8 9.86538C8.8 11.8846 10.4 13.5 12.4 13.5C14.4 13.5 16 11.8846 16 9.86538C16 7.84615 14.4 6.23077 12.4 6.23077H12.336L9.128 3ZM5.472 10.4792C5.2 11.295 4.464 11.8846 3.576 11.8846C2.472 11.8846 1.576 10.98 1.576 9.86538C1.576 8.75077 2.472 7.84615 3.576 7.84615C4.472 7.84615 5.2 8.44385 5.472 9.25962H3.2V10.4712L5.472 10.4792ZM10.376 9.86538C10.376 10.98 11.272 11.8846 12.376 11.8846C13.4806 11.8846 14.376 10.9806 14.376 9.86538C14.376 8.75019 13.4806 7.84615 12.376 7.84615C11.272 7.84615 10.376 8.75077 10.376 9.86538Z"
                                                     fill="#A3A3A4" />
                                             </svg>
-                                            <span style="font-size: 13px;color: #888888;position: relative;left: -35px;">
+                                            <span
+                                                style="font-size: 13px;color: #888888;position: relative;left: -35px;">
                                                 {{ $product->distance }}
                                             </span>
                                         </span>
@@ -183,9 +175,33 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <script>
+        const rest = document.getElementById("rest");
+        let dish = document.getElementById("dish");
+        const prod = document.getElementById("prod");
+        const food = document.getElementById("food");
 
+        dish.addEventListener("click", () => {
+            dish.style.background = "#503E9D";
+            
+            rest.style.background = "transparent";
+            prod.style.display = "none";
+            food.style.display = "flex";
+            food.style.color = "white !important";
+
+            
+        });
+        rest.addEventListener("click", () => {
+            rest.style.background = "#503E9D";
+            dish.style.background = "transparent";
+            food.style.display = "none";
+            prod.style.display = "flex";
+            
+        });
+
+       
+    </script>
 </body>
 
 </html>

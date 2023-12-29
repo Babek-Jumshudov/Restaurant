@@ -27,7 +27,9 @@
             @endcomponent
             <!--------------------------------- PRODUCTS ------------------------------------>
             <div class="b_div_sag_products ">
-                <div class="container ">
+                <div class="container " style="
+                padding: 50px;
+            ">
                     <div class="divs1">
                         <div class="mr-2">
                             <h5>Upcoming orders</h5>

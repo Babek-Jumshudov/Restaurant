@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rebeccapurple;
+  background-color: wheat;
   position: relative;
 }
 .contain {
@@ -16,14 +16,16 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: flex-start ;
 }
 .left {
   width: 200px;
   height: 200px;
   border-radius: 10px;
-  background-color: purple;
+  background-color: white;
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -33,7 +35,7 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: crimson;
+  background-color: wheat;
 }
 .left span {
   margin-left: 15px;
@@ -41,13 +43,12 @@
   font-weight: bold;
 }
 .left a {
-  color: white;
+  color: black;
 }
 .right {
   width: 950px;
-  height: 550px;
-  background-color: rgb(134, 75, 134);
-  border-radius: 10px;
+  height: 100vh;
+  background-color: wheat;
   padding: 5px;
   margin-left: 5px;
   overflow: auto;

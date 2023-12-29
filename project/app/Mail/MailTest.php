@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
-
+use App\Models\User;
 
 
 class MailTest extends Mailable
@@ -24,7 +24,7 @@ class MailTest extends Mailable
 
     public function build()
     {
-        return $this->from('babekcumsudov593@gmail.com', 'Test Gmaili')
+        return $this->from(User::first()->email, 'Babek Cumsudov')
             ->subject($this->data['subject'])
             ->view('Mail.sendEmail')->with('data', $this->data);
     }

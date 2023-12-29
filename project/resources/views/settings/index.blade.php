@@ -12,17 +12,19 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="{{ asset('images/loqo_tek.jpg') }}" type="image/x-icon">
+<script src="{{ asset('js/script.js') }}"></script>
+
     <title>Setting</title>
 </head>
 
 <body>
     <div class="row b_sag_sol">
-            @component('layout.menu')
-            @endcomponent
+        @component('layout.menu')
+        @endcomponent
 
         <div class=" b_div_sag">
             <!--------------------------------- header NAVBAR ----------------------------->
-            @component('layout.navbar')           
+            @component('layout.navbar')
             @endcomponent
             <!--------------------------------- PRODUCTS ------------------------------------>
             <div style="overflow: hidden; width: 90%;" class="container">
@@ -101,8 +103,8 @@
                                                 </ul>
                                             </div>
                                             <div class="profile-mail">
-                                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
+                                                <svg width="48" height="48" viewBox="0 0 48 48"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <rect width="48" height="48" rx="10"
                                                         fill="#FB6D3A" fill-opacity="0.1" />
                                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -563,7 +565,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </li><br><br>
+                        </li>
                     </ul>
                 </div>
 
@@ -571,7 +573,7 @@
         </div>
 
     </div>
-    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
+

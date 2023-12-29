@@ -272,11 +272,8 @@
                                                 style="font-size: 11px;position: relative;color: #787878;left: -30px;">
                                                 {{ $seller->distance }}
                                             </span>
-
-
                                         </div>
                                     </div>
-
                                 </div>
                             @endforeach
                         </div>
@@ -319,6 +316,7 @@
         </div>
 
     </div>
+    <script src="{{asset('js/script.js')}}"></script>
 
 </body>
 

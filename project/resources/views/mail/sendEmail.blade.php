@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Password Reset</h3>
+    <h2>Tebrikler</h2>
     <p>{{$data['body']}}</p>
 </body>
 </html>

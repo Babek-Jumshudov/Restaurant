@@ -35,8 +35,9 @@
     margin-left: 5%;
     align-items: center;
   }
-  .b_button_menu_active {
-    background: #503e9d;
+  
+  .active{
+    background: #503e9d !important;
     color: white !important;
   }
   .b_sol_delivery {
@@ -988,8 +989,8 @@
       margin-left: -1%;
     }
     .b_div_sag_ilkdiv {
-      width: 110%;
-      margin-left: 0;
+      width: 120%;
+      margin-left: -5%;
     }
     .b_div_sag_products {
       margin-left: 6%;

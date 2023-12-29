@@ -25,10 +25,10 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
-       
+
 
         if (auth()->attempt($credentials)) {
-            return redirect()->intended('home')->with('success', 'WELCOME ' . ' '. $request->email);
+            return redirect()->intended('home')->with('success', 'WELCOME ' . ' ' . $request->email);
         } else {
             return back()->with(['email' => 'Melumatlari duzgun daxil edin']);
         }
@@ -48,62 +48,5 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
         return redirect('login')->with('success', 'Qeydiyyat tamamlandi!');
-
-
     }
-
-    public function resetPassword(Request $request)
-    {
-
-        $user = User::where('email', $request->input('email'))->first();
-
-        $data = ['name' => $request->input('name'), 'email' => $request->input('email')];
-
-        if ($user) {
-            Mail::send('babekcumsudov593@gmail.com', $data, function ($message) use ($user) {
-                $message->to($user->email);
-                $message->subject('Hello Babek');
-            });
-
-            return redirect()->route('home')->with(['success' => 'Mail başarıyla gönderildi QAQA.']);
-        } else {
-            return back()->with(['email' => 'Kullanıcı e-posta adresine sahip değil.']);
-        }
-    }
-
-    public function forgotEmail(Request $request)
-    {
-        $email = $request->email;
-
-        $status = Password::sendResetLink(['email' => $email]);
-
-        if ($status === Password::RESET_LINK_SENT) {
-            return redirect('login')->with('success', 'Gmaile link gonderildi');
-        } else {
-            return back()->withErrors(['email' => 'Gmailini yoxla qaqa']);
-        }
-    }
-
-
-    public function testEmailConnection()
-    {
-        $host = 'mailpit';
-        $port = 1025;
-
-        $socket = @stream_socket_client("tcp://$host:$port", $errno, $errstr, 30);
-
-        if ($socket) {
-            echo "E-posta sunucusuna bağlantı başarılı.\n";
-            fclose($socket);
-        } else {
-            echo "Bağlantı hatası: $errstr ($errno)\n";
-        }
-    }
-
-
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
 }
