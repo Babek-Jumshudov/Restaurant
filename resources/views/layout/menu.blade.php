@@ -10,7 +10,12 @@
     </div>
 
     <div class="b_button_menu">
-        <a href="{{ route('home') }}" class="{{ Request::is('home') ? 'active' : '' }}">
+        <a href="{{ route('home') }}" class="{{Request::is('home') ? 'active' : '' }}
+            {{Request::is('home/order') ? 'active' : '' }}
+            {{Request::is('home/products') ? 'active' : '' }}
+            {{Request::is('home/basget') ? 'active' : '' }}
+            {{Request::is('home/sellers/*') ? 'active' : '' }}
+            {{Request::is('/') ? 'active' : '' }}">
             <svg height="15" viewBox="0 0 50 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M24 12.0534L12 0L0 12.0534H2.31282V23H10.7891V15.7023H13.2109V23H21.6872V12.0534H24ZM8.36731 13.2697V20.5674H4.73461V10.7277L12 3.42993L19.2654 10.7277V20.5674H15.6327V13.2697H13.2109H10.7891H8.36731Z"
@@ -96,39 +101,36 @@
                 d="M248.667 78L244 73.3333L245.333 72L250 76.6667L254.667 72L256 73.3333L251.333 78L256 82.6667L254.667 84L250 79.3333L245.333 84L244 82.6667L248.667 78Z"
                 fill="black" />
             <defs>
-                <filter id="filter0_d_340_26229" x="4" y="44" width="296" height="444"
-                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <filter id="filter0_d_340_26229" x="4" y="44" width="296" height="444" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
                         result="hardAlpha" />
-                    <feMorphology radius="4" operator="erode" in="SourceAlpha"
-                        result="effect1_dropShadow_340_26229" />
+                    <feMorphology radius="4" operator="erode" in="SourceAlpha" result="effect1_dropShadow_340_26229" />
                     <feOffset dy="24" />
                     <feGaussianBlur stdDeviation="32" />
                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0" />
                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_340_26229" />
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_340_26229" result="shape" />
                 </filter>
-                <filter id="filter1_d_340_26229" x="-12" y="32" width="328" height="444"
-                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <filter id="filter1_d_340_26229" x="-12" y="32" width="328" height="444" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
                         result="hardAlpha" />
-                    <feMorphology radius="4" operator="erode" in="SourceAlpha"
-                        result="effect1_dropShadow_340_26229" />
+                    <feMorphology radius="4" operator="erode" in="SourceAlpha" result="effect1_dropShadow_340_26229" />
                     <feOffset dy="24" />
                     <feGaussianBlur stdDeviation="32" />
                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0" />
                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_340_26229" />
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_340_26229" result="shape" />
                 </filter>
-                <filter id="filter2_d_340_26229" x="-56" y="0" width="416" height="500"
-                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <filter id="filter2_d_340_26229" x="-56" y="0" width="416" height="500" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
                         result="hardAlpha" />
-                    <feMorphology radius="8" operator="erode" in="SourceAlpha"
-                        result="effect1_dropShadow_340_26229" />
+                    <feMorphology radius="8" operator="erode" in="SourceAlpha" result="effect1_dropShadow_340_26229" />
                     <feOffset dy="32" />
                     <feGaussianBlur stdDeviation="48" />
                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />

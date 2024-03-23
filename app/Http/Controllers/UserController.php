@@ -21,18 +21,23 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $credentials = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
-
-
-        if (auth()->attempt($credentials)) {
-            return redirect()->intended('home')->with('success', 'WELCOME ' . ' ' . $request->email);
-        } else {
-            return back()->with(['email' => 'Melumatlari duzgun daxil edin']);
+        try {
+            $credentials = [
+                'email' => $request->email,
+                'password' => $request->password,
+            ];
+    
+            if (auth()->attempt($credentials)) {
+                return redirect()->intended('home')->with('success', 'WELCOME ' . ' ' . $request->email);
+            } else {
+                return back()->with(['error' => 'Melumatlari duzgun daxil edin']);
+            }
+        } catch (\Throwable $th) {
+          
+            return back()->with(['error' => 'Bir hata oluştu. Lütfen tekrar deneyin.']);
         }
     }
+    
 
     public function register(Request $request)
     {

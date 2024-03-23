@@ -40,7 +40,7 @@ class MailController extends Controller
                 return redirect()->route('login')->with('success', 'Gmailine bax ');
             }
         } else {
-            return redirect()->route('forgot')->with('email', 'Gmailini yoxla birde yaz ');
+            return redirect()->route('forgot')->with('error', 'Gmailini yoxla birde yaz ');
         }
     }
 }

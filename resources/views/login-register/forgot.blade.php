@@ -25,16 +25,32 @@
         <div class="col b_login_sag" style="width: 600px; position: relative; top: 25vh;">
             <h1>Forgot password? </h1>
             <p>Please enter your email address to continue</p>
-            @if (session('email'))
-                <div class="alert alert-danger">
-                    {{ session('email') }}
-                </div>
-            @endif
-            @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
+            <div class="messege"
+                style="
+    height: 85px;
+    background: #f8fffa;
+    top: 80%;
+    right: 2%;
+    box-shadow: 17px 7px 20px 4px #2c2c2c;
+    border-radius: 12px;
+    position: fixed;
+    z-index: 2;
+">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        <i style="font-size: 35px;position: relative;color: rgb(6, 179, 6);left: 40%;"
+                            class="fa-solid fa-check"></i></i><br>
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        <i style="font-size: 35px;position: relative;color: red;left: 40%;"
+                            class="fa-solid fa-circle-xmark"></i><br>
+                        {{ session('error') }}
+                    </div>
+                @endif
+            </div>
             <div class="row b_inputs">
                 <div class="col-1">
                     <svg width="576" height="72" viewBox="0 0 576 72" fill="none"

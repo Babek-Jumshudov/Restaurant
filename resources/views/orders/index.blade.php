@@ -25,12 +25,17 @@
             <!--------------------------------- header NAVBAR ----------------------------->
             @component('layout.navbar')
             @endcomponent
+            <nav >
+                <h5 style="color: white;position: relative;left: 106.7%;width: 25px;top: -126px;padding-left: 6px;border-radius: 20px;background: red;">
+                    {{ $basgets->count() }}
+                </h5>
+            </nav>
             <!--------------------------------- PRODUCTS ------------------------------------>
             <div class="b_div_sag_products ">
                 <div class="container " style="
                 padding: 50px;
             ">
-                    <div class="divs1">
+                    <div class="divs1"style="overflow: auto">
                         <div class="mr-2">
                             <h5>Upcoming orders</h5>
                             <div class="cards">
@@ -70,7 +75,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="divs2">
+                    <div class="divs2"style="overflow: auto">
                         <div class="s_container">
                             <h5>Previous orders</h5>
                             <div class="cards">
@@ -141,7 +146,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="divs2">
+                    <div class="divs2"style="overflow: auto">
 
                         <div class="s_container">
                             <h5>Previous orders</h5>

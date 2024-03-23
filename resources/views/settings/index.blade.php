@@ -12,7 +12,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="{{ asset('images/loqo_tek.jpg') }}" type="image/x-icon">
-<script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 
     <title>Setting</title>
 </head>
@@ -26,8 +26,14 @@
             <!--------------------------------- header NAVBAR ----------------------------->
             @component('layout.navbar')
             @endcomponent
+            <nav>
+                <h5
+                    style="color: white;position: relative;left: 106.7%;width: 25px;top: -125px;padding-left: 6px;border-radius: 20px;background: red;">
+                    {{ $basgets->count() }}
+                </h5>
+            </nav>
             <!--------------------------------- PRODUCTS ------------------------------------>
-            <div style="overflow: hidden; width: 90%;" class="container">
+            <div style="overflow: hidden;width: 115%;margin-left: -5%;margin-top: -6%;" class="container">
                 <div class="profile-section">
                     <svg height="25" viewBox="0 0 95 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -576,4 +582,3 @@
 </body>
 
 </html>
-

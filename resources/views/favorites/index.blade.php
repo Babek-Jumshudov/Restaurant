@@ -12,7 +12,12 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="{{ asset('images/loqo_tek.jpg') }}" type="image/x-icon">
+    <style>
+        .active_labs {
+            display: block !important;
 
+        }
+    </style>
     <title>Favourites</title>
 </head>
 
@@ -26,6 +31,12 @@
             <!--------------------------------- header NAVBAR ----------------------------->
             @component('layout.navbar')
             @endcomponent
+            <nav>
+                <h5
+                    style="color: white;position: relative;left: 106.7%;width: 25px;top: -126px;padding-left: 6px;border-radius: 20px;background: red;">
+                    {{ $basgets->count() }}
+                </h5>
+            </nav>
             <!--------------------------------- PRODUCTS ------------------------------------>
             <div class="b_div_sag_products">
                 <div class="container">
@@ -36,10 +47,10 @@
                         </div>
                         <div id='dish'>
                             <i class="fa-solid fa-utensils"></i>
-                                <p>Dishes (23)</p>
+                            <p>Dishes (23)</p>
                         </div>
                     </div>
-                    <div class="FEATURED_Product"id="prod">
+                    <div class="FEATURED_Product" id="prod">
                         @foreach ($sellers as $key => $seller)
                             <div class="FEATURED_Product_line1">
                                 <div class="container featured_product">
@@ -107,8 +118,8 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="container">
-                    
+                <div class="container {{ Request::is('favorites') ? 'active_labs' : '' }} " id="foods">
+
                     <div style="flex-wrap: wrap; justify-content: flex-start; " class="asian_boxs" id="food">
                         @foreach ($products as $key => $product)
                             <div class="asian_box col-4">
@@ -160,14 +171,7 @@
                                                 {{ $product->distance }}
                                             </span>
                                         </span>
-
-
-
-
-
-
                                     </div>
-
                                 </div>
                             </div>
                         @endforeach
@@ -177,31 +181,31 @@
         </div>
     </div>
     <script>
-        const rest = document.getElementById("rest");
-        let dish = document.getElementById("dish");
-        const prod = document.getElementById("prod");
-        const food = document.getElementById("food");
+        document.addEventListener("DOMContentLoaded", function() {
+            const rest = document.getElementById("rest");
+            const dish = document.getElementById("dish");
+            const prod = document.getElementById("prod");
+            const food = document.getElementById("food");
 
-        dish.addEventListener("click", () => {
-            dish.style.background = "#503E9D";
-            
-            rest.style.background = "transparent";
-            prod.style.display = "none";
-            food.style.display = "flex";
-            food.style.color = "white !important";
-
-            
-        });
-        rest.addEventListener("click", () => {
-            rest.style.background = "#503E9D";
-            dish.style.background = "transparent";
             food.style.display = "none";
-            prod.style.display = "flex";
-            
-        });
 
-       
+            dish.addEventListener("click", () => {
+                dish.classList.add('s_report');
+                rest.classList.remove('s_report');
+                prod.style.display = "none";
+                food.style.display = "flex";
+            });
+
+            rest.addEventListener("click", () => {
+                rest.classList.add('s_report');
+                dish.classList.remove('s_report');
+                prod.style.display = "flex";
+                food.style.display = "none";
+            });
+        });
     </script>
+
+
 </body>
 
 </html>
