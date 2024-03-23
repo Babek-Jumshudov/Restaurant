@@ -2,25 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Images;
+use App\Models\orders;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ImagesController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $products = Product::orderBy("created_at", "desc")->paginate(20);
+        return view('orders.index', compact('products'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -34,7 +36,7 @@ class ImagesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Images $Images)
+    public function show(orders $orders)
     {
         //
     }
@@ -42,7 +44,7 @@ class ImagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Images $Images)
+    public function edit(orders $orders)
     {
         //
     }
@@ -50,7 +52,7 @@ class ImagesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Images $Images)
+    public function update(Request $request, orders $orders)
     {
         //
     }
@@ -58,7 +60,7 @@ class ImagesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Images $Images)
+    public function destroy(orders $orders)
     {
         //
     }

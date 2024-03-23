@@ -21,16 +21,32 @@
             @component('layout.adminMenu')
             @endcomponent
             <div class="right">
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-                @if (session('email'))
-                    <div class="alert alert-warning">
-                        {{ session('email') }}
-                    </div>
-                @endif
+                <div class="messege"
+                    style="
+        height: 85px;
+        background: #f8fffa;
+        top: 80%;
+        right: 2%;
+        box-shadow: 17px 7px 20px 4px #2c2c2c;
+        border-radius: 12px;
+        position: fixed;
+        z-index: 2;
+    ">
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            <i style="font-size: 35px;position: relative;color: rgb(6, 179, 6);left: 40%;"
+                                class="fa-solid fa-check"></i></i><br>
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            <i style="font-size: 35px;position: relative;color: red;left: 40%;"
+                                class="fa-solid fa-circle-xmark"></i><br>
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                </div>
                 <table border="1">
                     <tr>
                         <th>Id</th>
@@ -91,7 +107,7 @@
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
-                       
+
                     </select><br>
                     <label for="distance">Distance:</label>
                     <select class="form-control" name="distance">

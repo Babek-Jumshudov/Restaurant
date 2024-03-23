@@ -1,4 +1,4 @@
-<div class="mt-4 b_div_sag_ilkdiv">
+<div class=" b_div_sag_ilkdiv">
     <!-- select -->
     <span class="select">
         {{-- Locatin --}}
@@ -31,10 +31,7 @@
             <select class="form-control" style="border: none" name="cars" id="cars">
                 <option value="volvo">Pick up</option>
                 <option value="volvo">Pick up</option>
-                <option value="volvo">Pick up</option>
-                <option value="volvo">Pick up</option>
-                <option value="volvo">Pick up</option>
-                <option value="volvo">Pick up</option>
+
             </select>
 
         </span>
@@ -68,8 +65,13 @@
                     d="M14 17V19.3333H34V17H14ZM17.3333 25.1667H30.6667V22.8333H17.3333V25.1667ZM26.2222 31H21.7778V28.6667H26.2222V31Z"
                     fill="white" />
             </svg></a>
+        <h5
+            style="position: relative;color: white; left: 61px;top: -17px;background: #503e9d;border-radius: 20px;padding-right: 7px;padding-left: 8px;">
 
-        <a href="{{ route("orders") }}" class="b_sebet_icon"><svg viewBox="0 0 48 48" fill="none"
+        </h5>
+        
+
+        <a href="{{ route('basget') }}" class="b_sebet_icon"><svg viewBox="0 0 48 48" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="10" fill="#FB6D3A" />
                 <path fill-rule="evenodd" clip-rule="evenodd"

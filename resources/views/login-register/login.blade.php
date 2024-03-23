@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="shortcut icon" href="{{ asset('images/loqo_tek.jpg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/loqo_tek.jpg') }}" type="image/x-icon">
 
     <title>Sign In</title>
 </head>
@@ -19,23 +19,38 @@
     <div class="row">
         <img class="b_img_yan" src="{{ asset('images/login_img_yan.jpg') }}" alt="b_img" />
         <div>
-            <img class="b_img" src="{{ asset('images/login_img_duz.jpg') }}" alt="b_img" />
+            <img style="border-radius: 20px" class="b_img" src="{{ asset('images/login_img_duz.jpg') }}" alt="b_img" />
         </div>
         <div class="b_login_sag">
             <h1>Welcome!</h1>
             <p>Sign in to your account to continue</p>
             <div class="container">
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                @if (session('email'))
-                    <div class="alert alert-danger">
-                        {{ session('email') }}
-                    </div>
-                @endif
+                <div class="messege"
+                    style="
+        height: 85px;
+        background: #f8fffa;
+        top: 80%;
+        right: 2%;
+        box-shadow: 17px 7px 20px 4px #2c2c2c;
+        border-radius: 12px;
+        position: fixed;
+        z-index: 2;
+    ">
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            <i style="font-size: 35px;position: relative;color: rgb(6, 179, 6);left: 40%;"
+                                class="fa-solid fa-check"></i></i><br>
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            <i style="font-size: 35px;position: relative;color: red;left: 40%;"
+                                class="fa-solid fa-circle-xmark"></i><br>
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                </div>
             </div>
             <form action="{{ route('login') }}" method="POST">
                 @csrf
