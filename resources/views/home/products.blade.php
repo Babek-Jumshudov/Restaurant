@@ -37,15 +37,14 @@
             <!--------------------------------- PRODUCTS ------------------------------------>
             <div class="b_div_sag_products ">
 
-                <div class="container"
-                    style="
+                <div class="container" style="
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
             ">
                     @foreach ($products as $prod)
                         <div class="asian_box" style="width: 30% ; margin: 10px">
-                            <img style="width: 100%; border-radius:15px" src="{{ asset($prod->image) }}">
+                            <img style="width: 100%; height: 150px; border-radius:15px" src="{{ asset($prod->image) }}">
                             <span>
                                 <p>{{ $prod->name }}</p>
                                 <span

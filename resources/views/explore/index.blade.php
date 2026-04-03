@@ -146,7 +146,7 @@
                         @foreach ($products as $key => $product)
                             @if ($key < 6)
                                 <div class="asian_box col-4">
-                                    <img src=" {{ $product->image }}" alt="Product Image">
+                                    <img style="width: 300px; height: 150px;" src=" {{ $product->image }}" alt="Product Image">
                                     <div style="display: flex;justify-content: space-around; align-items: baseline;">
                                         <p style="font-size: 15px;">{{ $product->name }}</p>
                                         <span
