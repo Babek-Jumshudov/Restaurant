@@ -30,6 +30,7 @@
                 <h5
                     style="color: white;position: relative;left: 106.7%;width: 25px;top: -125px;padding-left: 6px;border-radius: 20px;background: red;">
                     {{ $basgets->count() }}
+       <br>             
                 </h5>
             </nav>
 
