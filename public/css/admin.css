@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: wheat;
+  position: relative;
+}
+.contain {
+  width: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start ;
+}
+.left {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.left div {
+  width: 90%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: wheat;
+}
+.left span {
+  margin-left: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+}
+.left a {
+  color: black;
+}
+.right {
+  width: 950px;
+  height: 100vh;
+  background-color: wheat;
+  padding: 5px;
+  margin-left: 5px;
+  overflow: auto;
+}
+table {
+  width: 100%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(170, 170, 170);
+}
+table td {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+table button {
+  background-color: transparent;
+  border: none;
+  margin: 5px;
+  color: red;
+}
+.fa-pen-to-square {
+  color: green;
+}
+td img {
+  width: auto;
+  height: 100px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  object-fit: contain;
+}
+.btn {
+  height: 50px;
+  width: 100px;
+  background-color: rgb(6, 192, 0);
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+}
+.poupup {
+  height: 630px;
+  width: auto;
+  background-color: rgb(28, 26, 31);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.active {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+}
+.poupup input {
+  width: 230px;
+  height: 40px;
+  padding: 5px;
+}
+.send {
+  width: 95px;
+  height: 40px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.close {
+  width: 23px;
+  height: 23px;
+  background-color: red;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.inputgroup {
+  width: 550px;
+  color: wheat;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+textarea {
+  width: 230px;
+  height: 90px;
+  padding: 5px;
+}
